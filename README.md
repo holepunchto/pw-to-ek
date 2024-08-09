@@ -1,6 +1,6 @@
 # Pear-ek-generator
 
-Derive a secure encryption key from a password using the sodium's scrypt implementation.
+Derive a secure encryption key from a password using sodium's scrypt implementation.
 
 ``` javascript
  const generate = require('pear-ek-generator')
