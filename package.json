@@ -6,6 +6,9 @@
   "scripts": {
     "test": "npx standard && brittle test.js"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [],
   "author": "Holepunch",
   "license": "Apache-2.0",
