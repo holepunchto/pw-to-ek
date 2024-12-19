@@ -10,9 +10,9 @@ test('generate from password', async (t) => {
   const r2 = await generate('password', salt)
   const r3 = await generate('another-password', salt)
 
-  t.is(r1.length, sodium.crypto_pwhash_scryptsalsa208sha256_STRBYTES)
-  t.is(r2.length, sodium.crypto_pwhash_scryptsalsa208sha256_STRBYTES)
-  t.is(r3.length, sodium.crypto_pwhash_scryptsalsa208sha256_STRBYTES)
+  t.is(r1.length, 32)
+  t.is(r2.length, 32)
+  t.is(r3.length, 32)
   t.ok(b4a.equals(r1, r2))
   t.ok(!b4a.equals(r1, r3))
 })
@@ -34,7 +34,7 @@ test('change salt', async (t) => {
   const r1 = await generate('password', saltA)
   const r2 = await generate('password', saltB)
 
-  t.is(r1.length, sodium.crypto_pwhash_scryptsalsa208sha256_STRBYTES)
-  t.is(r2.length, sodium.crypto_pwhash_scryptsalsa208sha256_STRBYTES)
+  t.is(r1.length, 32)
+  t.is(r2.length, 32)
   t.ok(!b4a.equals(r1, r2))
 })
