@@ -5,12 +5,6 @@ module.exports = async (pwd, salt) => {
   const ops = sodium.crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE
   const mem = sodium.crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE
   const output = b4a.alloc(32)
-  await sodium.crypto_pwhash_scryptsalsa208sha256_async(
-    output,
-    b4a.from(pwd),
-    salt,
-    ops,
-    mem
-  )
+  await sodium.crypto_pwhash_scryptsalsa208sha256_async(output, b4a.from(pwd), salt, ops, mem)
   return output
 }
